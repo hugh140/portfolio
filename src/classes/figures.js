@@ -7,8 +7,8 @@ class NodeFigure {
       y: Math.random() * this.canvas.height,
     };
     this.speed = {
-      x: Math.random() * 5 - 2.5,
-      y: Math.random() * 5 - 2.5,
+      x: Math.random() * 3 - 1.5,
+      y: Math.random() * 3 - 1.5,
     };
     this.size = Math.random() * 20 + 1;
   }
@@ -34,6 +34,43 @@ class NodeFigure {
   }
 }
 
+class Particle {
+  constructor(ctx, x, y, id) {
+    this.ctx = ctx;
+    this.alive = true;
+    this.id = id;
+    this.position = {
+      x: x,
+      y: y,
+    };
+    this.speed = {
+      x: Math.random() * 10 - 5,
+      y: Math.random() * 10 - 5,
+    };
+    this.size = Math.random() * 30 + 1;
+
+    const randomGray = Math.random() * 255;
+    this.color = `rgba(${randomGray}, ${randomGray}, ${randomGray}, ${Math.random()})`;
+  }
+
+  update() {
+    this.position.x += this.speed.x;
+    this.position.y += this.speed.y;
+    this.size -= 0.2;
+  }
+
+  draw() {
+    if (this.size <= 0) {
+      this.alive = false;
+      return;
+    }
+    this.ctx.fillStyle = this.color;
+    this.ctx.beginPath();
+    this.ctx.arc(this.position.x, this.position.y, this.size, 0, Math.PI * 2);
+    this.ctx.fill();
+  }
+}
+
 const maxDistance = 200;
 
 function DrawLineFigure(ctx, firstNode, lastNode) {
@@ -49,4 +86,4 @@ function DrawLineFigure(ctx, firstNode, lastNode) {
   ctx.stroke();
 }
 
-export { NodeFigure, DrawLineFigure };
+export { NodeFigure, DrawLineFigure, Particle };

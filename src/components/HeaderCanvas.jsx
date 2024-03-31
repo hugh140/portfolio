@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { DrawLineFigure, NodeFigure } from "../classes/figures";
+import { DrawLineFigure, NodeFigure, Particle } from "../classes/figures";
 
 let loopId = null;
 
@@ -15,6 +15,7 @@ function HeaderCanvas() {
 
     const ctx = canvasRef.current.getContext("2d");
     const nodesArray = [];
+    const particles = [];
     for (let i = 0; i < 50; i++)
       nodesArray[i] = new NodeFigure(ctx, canvasRef.current);
 
@@ -22,13 +23,16 @@ function HeaderCanvas() {
       ctx.fillStyle = "#18181b";
       ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
       for (const node of nodesArray) {
-        for (const nodeLine of nodesArray) {
-          DrawLineFigure(ctx, node, nodeLine);
-        }
+        for (const nodeLine of nodesArray) DrawLineFigure(ctx, node, nodeLine);
 
-        node.update();
         node.draw();
+        node.update();
       }
+      for (const particle of particles) {
+        particle.draw();
+        particle.update();
+      }
+
       loopId = requestAnimationFrame(animate);
     }
     animate();
@@ -43,7 +47,6 @@ function HeaderCanvas() {
             (node.position.y - evt.clientY, 2)
         );
         if (distance > 200) continue;
-        console.log(distance);
 
         angle = Math.atan2(
           node.position.y - evt.clientY,
@@ -52,10 +55,12 @@ function HeaderCanvas() {
         speed.x = Math.cos(angle) * distance + node.speed.x;
         speed.y = Math.sin(angle) * distance + node.speed.y;
         vectorModule = Math.sqrt(Math.pow(speed.x, 2) + Math.pow(speed.y, 2));
-        node.speed.x = (speed.x / vectorModule) * ((-3 / 100) * distance + 4);
-        node.speed.y = (speed.y / vectorModule) * ((-3 / 100) * distance + 4);
-        console.log(node.speed.x, node.speed.y);
+        node.speed.x = (speed.x / vectorModule) * ((-6 / 100) * distance + 7);
+        node.speed.y = (speed.y / vectorModule) * ((-6 / 100) * distance + 7);
       }
+      for (let i = 0; i < Math.random() * 20 + 20; i++)
+        particles[i] = new Particle(ctx, evt.clientX, evt.clientY);
+      console.log(particles);
     });
 
     return () => {
