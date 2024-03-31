@@ -19,8 +19,18 @@ function HeaderCanvas() {
     for (let i = 0; i < 50; i++)
       nodesArray[i] = new NodeFigure(ctx, canvasRef.current);
 
+    const grad = ctx.createLinearGradient(
+      300,
+      canvasRef.current.width / 2,
+      300,
+      0
+    );
+
+    grad.addColorStop(0, "rgba(0, 0, 0, 1)");
+    grad.addColorStop(1, "rgba(56, 56, 56, 1)");
+
     function animate() {
-      ctx.fillStyle = "#18181b";
+      ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
       for (const node of nodesArray) {
         for (const nodeLine of nodesArray) DrawLineFigure(ctx, node, nodeLine);
