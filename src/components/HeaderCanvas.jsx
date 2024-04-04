@@ -26,8 +26,8 @@ function HeaderCanvas() {
       0
     );
 
-    grad.addColorStop(0, "rgba(0, 0, 0, 1)");
-    grad.addColorStop(1, "rgba(56, 56, 56, 1)");
+    grad.addColorStop(1, "black");
+    grad.addColorStop(0, "#18181b");
 
     function animate() {
       ctx.fillStyle = grad;
@@ -79,7 +79,7 @@ function HeaderCanvas() {
   }, []);
 
   return (
-    <canvas className="w-full h-screen bg-zinc-900" ref={canvasRef}></canvas>
+    <canvas className="w-full h-screen bg-zinc-900 shadow-2xl" ref={canvasRef}></canvas>
   );
 }
 export default HeaderCanvas;

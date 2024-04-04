@@ -37,10 +37,11 @@ function HeaderInfo() {
           <img
             src="./assets/portada.webp"
             className="w-64 rounded-full hover:scale-110 duration-500 ease-in-out"
+            loading="lazy"
             alt=""
           />
         </div>
-        <div className="lg:w-[60%] md:w-[75%] p-5 w-full mx-auto gap-3 flex flex-row justify-center">
+        <div className="lg:w-[60%] md:w-[75%] p-5 w-full mx-auto gap-3 flex flex-row justify-center text-center">
           <a
             target="_blank"
             href="https://www.linkedin.com/in/hugo-reyes-292a88260/"
