@@ -60,7 +60,13 @@ function HeaderInfo() {
           </a>
           <a
             target="_blank"
-            href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=hugofer300@gmail.com"
+            href={
+              /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+              )
+                ? "mailto:hugofer300@gmail.com"
+                : "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=hugofer300@gmail.com"
+            }
             className="text-white text-2xl rounded-2xl border-transparent w-fit
               p-1 px-3 hover:bg-red-600 ease-in duration-100 cursor-pointer hover:scale-105"
           >
