@@ -16,7 +16,16 @@ function HeaderCanvas() {
     const ctx = canvasRef.current.getContext("2d");
     const nodesArray = [];
     const particles = [];
-    for (let i = 0; i < 50; i++)
+
+    let totalParticles = 50;
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    )
+      totalParticles /= 2;
+
+    for (let i = 0; i < totalParticles; i++)
       nodesArray[i] = new NodeFigure(ctx, canvasRef.current);
 
     const grad = ctx.createLinearGradient(
@@ -70,7 +79,6 @@ function HeaderCanvas() {
       }
       for (let i = 0; i < Math.random() * 20 + 20; i++)
         particles[i] = new Particle(ctx, evt.clientX, evt.clientY);
-      console.log(particles);
     });
 
     return () => {
@@ -79,7 +87,10 @@ function HeaderCanvas() {
   }, []);
 
   return (
-    <canvas className="w-full h-screen bg-zinc-900 shadow-2xl" ref={canvasRef}></canvas>
+    <canvas
+      className="w-full h-screen bg-zinc-900 shadow-2xl"
+      ref={canvasRef}
+    ></canvas>
   );
 }
 export default HeaderCanvas;
