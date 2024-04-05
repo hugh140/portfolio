@@ -1,8 +1,26 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import sections from "../content/projectsContent";
+import useIsVisible from "../hooks/useIsVisible";
 
 function ProjectSection() {
   const [selected, setSelected] = useState(0);
+  const addedClass = useRef();
+  const ref = useRef();
+  const isAnimated = useRef(false);
+  const isVisible = useIsVisible(ref);
+
+  function isAnimating() {
+    if (isAnimated.current) {
+      addedClass.current = "opacity-1";
+      return;
+    }
+
+    if (isVisible) {
+      isAnimated.current = true;
+      addedClass.current = "animate-fade-in-up duration-50 opacity-1";
+    } else addedClass.current = "opacity-0";
+  }
+  isAnimating();
 
   function handleSectionSelect(id) {
     setSelected(id);
@@ -13,13 +31,15 @@ function ProjectSection() {
       <div className="my-20" />
       <h2 className="text-3xl mb-5 font-bold">Proyectos Personales</h2>
 
-      <div className="flex flex-row items-end justify-around">
+      <div
+        className={`flex flex-row items-end justify-around ${addedClass.current}`}
+      >
         {sections.map((section, index) => (
           <>
             {index === selected ? (
               <button
                 className={`bg-gradient-to-b from-zinc-500 to-transparent border-2 border-b-0 rounded-lg rounded-b-none 
-              border-white w-full hover:from-zinc-600 p-3 text-xl`}
+              border-white w-full hover:from-zinc-600 p-1 py-3 text-xl`}
                 onClick={() => handleSectionSelect(index)}
               >
                 {section.title}
@@ -37,7 +57,11 @@ function ProjectSection() {
         ))}
       </div>
 
-      <div className="border-white border-2 p-5 border-y-0" id="project-border">
+      <div
+        className={`border-white border-2 p-5 border-y-0 ${addedClass.current}`}
+        id="project-border"
+        ref={ref}
+      >
         {sections[selected].projects.map((project, index) => (
           <div key={index}>
             {project()}

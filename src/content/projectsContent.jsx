@@ -5,8 +5,13 @@ import {
   faNodeJs,
   faCss3,
   faBootstrap,
+  faUnity,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCode, faDatabase } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCode,
+  faDatabase,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
 
 const sections = [
   {
@@ -107,6 +112,93 @@ const sections = [
   },
   {
     title: "C#",
+    projects: [
+      () => (
+        <ProjectBody
+          title="Live Code Music"
+          image="./assets/project5.webp"
+          customButton={{
+            title: "Descargar",
+            url: "https://hug-h.itch.io/music-sequencer",
+            icon: faDownload,
+          }}
+        >
+          <div className="flex my-5 gap-2">
+            <div className="rounded-xl bg-zinc-900 w-fit p-1">
+              <FontAwesomeIcon className="text-violet-600" icon={faCode} />{" "}
+              <span className="text-sm">C#</span>
+            </div>
+            <div className="rounded-xl bg-zinc-900 w-fit p-1">
+              <FontAwesomeIcon className="text-white-600" icon={faUnity} />{" "}
+              <span className="text-sm">Unity</span>
+            </div>
+          </div>
+          <p className="text-lg mb-5 text-zinc-400">
+            El primer proyecto donde intenté unir la programación con la música,
+            haciendo un secuenciador de ritmos para Android bastante funcional y
+            divertido. Tiene 4 instrumentos y se puede cambiar el tempo del
+            ritmo.
+          </p>
+        </ProjectBody>
+      ),
+      () => (
+        <ProjectBody
+          title="VS Game"
+          image="./assets/project7.webp"
+          customButton={{
+            title: "Descargar",
+            url: "https://hug-h.itch.io/vs-game",
+            icon: faDownload,
+          }}
+        >
+          <div className="flex my-5 gap-2">
+            <div className="rounded-xl bg-zinc-900 w-fit p-1">
+              <FontAwesomeIcon className="text-violet-600" icon={faCode} />{" "}
+              <span className="text-sm">C#</span>
+            </div>
+            <div className="rounded-xl bg-zinc-900 w-fit p-1">
+              <FontAwesomeIcon className="text-white-600" icon={faUnity} />{" "}
+              <span className="text-sm">Unity</span>
+            </div>
+          </div>
+          <p className="text-lg mb-5 text-zinc-400">
+            Para una exposición y poder jugar mi propio juego con mis amigos,
+            programé esto. El juego tiene lugares de protección, powerups,
+            música que se adapta según al contexto del juego, etc.
+          </p>
+        </ProjectBody>
+      ),
+      () => (
+        <ProjectBody
+          title="Pong"
+          image="./assets/project6.webp"
+          customButton={{
+            title: "Descargar",
+            url: "https://hug-h.itch.io/pong-copia",
+            icon: faDownload,
+          }}
+        >
+          <div className="flex my-5 gap-2">
+            <div className="rounded-xl bg-zinc-900 w-fit p-1">
+              <FontAwesomeIcon className="text-violet-600" icon={faCode} />{" "}
+              <span className="text-sm">C#</span>
+            </div>
+            <div className="rounded-xl bg-zinc-900 w-fit p-1">
+              <FontAwesomeIcon className="text-white-600" icon={faUnity} />{" "}
+              <span className="text-sm">Unity</span>
+            </div>
+          </div>
+          <p className="text-lg mb-5 text-zinc-400">
+            Pequeño juego que copia al clásico Pong. Lo hice para practicar mi
+            lógica de programación, donde lo retador en su tiempo fue programar
+            la dirección de la pelota según de que lado la golpee la barra.
+          </p>
+        </ProjectBody>
+      ),
+    ],
+  },
+  {
+    title: "Demás Proyectos",
     projects: [
       () => (
         <ProjectBody

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
 
-function ProjectBody({ title, image, children, code }) {
+function ProjectBody({ title, image, children, code, customButton }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       <img
@@ -16,11 +16,20 @@ function ProjectBody({ title, image, children, code }) {
 
         {children}
 
-        <a href={code} target="_blank">
-          <button className="p-2 bg-indigo-900 rounded-lg hover:bg-indigo-800 duration-100">
-            <FontAwesomeIcon icon={faGithub} /> Código
-          </button>
-        </a>
+        {code && (
+          <a href={code} target="_blank">
+            <button className="p-2 bg-indigo-900 rounded-lg hover:bg-indigo-800 duration-100">
+              <FontAwesomeIcon icon={faGithub} /> Código
+            </button>
+          </a>
+        )}
+        {customButton?.title && (
+          <a href={customButton.url} target="_blank">
+            <button className="p-2 bg-sky-900 rounded-lg hover:bg-sky-800 duration-100">
+              <FontAwesomeIcon icon={customButton.icon} /> {customButton.title}
+            </button>
+          </a>
+        )}
       </div>
     </div>
   );
@@ -32,4 +41,5 @@ ProjectBody.propTypes = {
   image: PropTypes.string,
   children: PropTypes.array,
   code: PropTypes.string,
+  customButton: PropTypes.object,
 };
