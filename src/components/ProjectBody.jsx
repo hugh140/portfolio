@@ -8,7 +8,7 @@ function ProjectBody({ title, image, children, code }) {
       <img
         src={image}
         className="object-cover aspect-video md:aspect-square rounded-3xl shadow-xl shadow-transparent 
-        hover:shadow-zinc-700 duration-200"
+        hover:shadow-zinc-700 hover:scale-105 duration-200"
         alt=""
       />
       <div>
