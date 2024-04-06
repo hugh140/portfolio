@@ -3,7 +3,6 @@ import ProjectBody from "../components/ProjectBody";
 import {
   faReact,
   faNodeJs,
-  faCss3,
   faBootstrap,
   faUnity,
 } from "@fortawesome/free-brands-svg-icons";

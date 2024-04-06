@@ -23,6 +23,7 @@ function ProjectBody({ title, image, children, code, customButton }) {
           src={image}
           ref={imageRef}
           onLoad={handleImageLoad}
+          loading="lazy"
           className={`object-cover aspect-video md:aspect-square rounded-3xl shadow-xl shadow-transparent 
         hover:shadow-zinc-700 hover:scale-105 duration-200 ${loading && "opacity-10"}`}
           alt=""
