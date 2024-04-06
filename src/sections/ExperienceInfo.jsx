@@ -12,7 +12,7 @@ import ExperienceSection from "../components/ExperienceSection";
 function ExperienceInfo() {
   return (
     <section>
-      <div className="lg:w-[60%] md:w-[75%] p-5 w-full mx-auto">
+      <div className="lg:w-[60%] md:w-[75%] p-5 w-full mx-auto" id="experience">
         <div className="my-20" />
         <h2 className="text-3xl mb-5 font-bold">Experiencia Laboral</h2>
         <div className="ps-5 border-s-2">

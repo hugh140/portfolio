@@ -29,7 +29,7 @@ function AboutMeSection() {
   }
 
   return (
-    <div className="lg:w-[60%] md:w-[75%] p-5 w-full mx-auto">
+    <div className="lg:w-[60%] md:w-[75%] p-5 w-full mx-auto" id="aboutMe">
       <div className="my-20" />
       <h2 className="text-3xl mb-5 font-bold">Sobre Mi</h2>
       <div className="flex lg:flex-row flex-col-reverse justify-center items-center gap-10">

@@ -1,3 +1,4 @@
+import Menu from "./components/Menu";
 import AboutMeSection from "./sections/AboutMeSection";
 import ExperienceInfo from "./sections/ExperienceInfo";
 import FooterSection from "./sections/FooterSection";
@@ -8,6 +9,8 @@ function App() {
   return (
     <main className="text-white bg-black">
       <HeaderInfo />
+      <Menu />
+
       <div className="bg-gradient-to-b from-zinc-950 via-violet-950/90 via-90% to-blue-950/90">
         <ExperienceInfo />
         <ProjectSection />
