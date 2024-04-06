@@ -1,6 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, createContext } from "react";
 import sections from "../content/projectsContent";
 import useIsVisible from "../hooks/useIsVisible";
+
+const SelectionContext = createContext(null);
 
 function ProjectSection() {
   const [selected, setSelected] = useState(0);
@@ -57,21 +59,24 @@ function ProjectSection() {
         ))}
       </div>
 
-      <div
-        className={`border-white border-2 p-5 border-y-0 ${addedClass.current}`}
-        id="project-border"
-        ref={ref}
-      >
-        {sections[selected].projects.map((project, index) => (
-          <div key={index}>
-            {project()}
-            {index < sections[selected].projects.length && (
-              <div className="my-10" />
-            )}
-          </div>
-        ))}
-      </div>
+      <SelectionContext.Provider value={selected}>
+        <div
+          className={`border-white border-2 p-5 border-y-0 ${addedClass.current}`}
+          id="project-border"
+          ref={ref}
+        >
+          {sections[selected].projects.map((project, index) => (
+            <div key={project.title}>
+              {project()}
+              {index < sections[selected].projects.length && (
+                <div className="my-10" />
+              )}
+            </div>
+          ))}
+        </div>
+      </SelectionContext.Provider>
     </div>
   );
 }
+export { SelectionContext };
 export default ProjectSection;

@@ -1,16 +1,40 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
+import { useRef, useState, useContext, useEffect } from "react";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { SelectionContext } from "../sections/ProjectSection";
 
 function ProjectBody({ title, image, children, code, customButton }) {
+  const imageRef = useRef();
+  const [loading, setLoading] = useState(true);
+  const selection = useContext(SelectionContext);
+
+  useEffect(() => setLoading(true), [selection]);
+
+  function handleImageLoad() {
+    setLoading(false);
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <img
-        src={image}
-        className="object-cover aspect-video md:aspect-square rounded-3xl shadow-xl shadow-transparent 
-        hover:shadow-zinc-700 hover:scale-105 duration-200"
-        alt=""
-      />
+      <div className="relative">
+        <img
+          src={image}
+          ref={imageRef}
+          onLoad={handleImageLoad}
+          className={`object-cover aspect-video md:aspect-square rounded-3xl shadow-xl shadow-transparent 
+        hover:shadow-zinc-700 hover:scale-105 duration-200 ${loading && "opacity-10"}`}
+          alt=""
+        />
+        {loading && (
+          <FontAwesomeIcon
+            className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-4xl"
+            icon={faSpinner}
+            spin
+          />
+        )}
+      </div>
       <div>
         <h2 className="text-3xl font-bold">{title}</h2>
 

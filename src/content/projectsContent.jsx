@@ -197,37 +197,37 @@ const sections = [
       ),
     ],
   },
-  {
-    title: "Demás Proyectos",
-    projects: [
-      () => (
-        <ProjectBody
-          title="Live Code Music"
-          image="./assets/project2.webp"
-          code="https://github.com/hugh140/live-code-music"
-        >
-          <div className="flex my-5 gap-2">
-            <div className="rounded-xl bg-zinc-900 w-fit p-1">
-              <FontAwesomeIcon className="text-blue-600" icon={faReact} />{" "}
-              <span className="text-sm">React</span>
-            </div>
-            <div className="rounded-xl bg-zinc-900 w-fit p-1">
-              <FontAwesomeIcon className="text-cyan-600" icon={faCss3} />{" "}
-              <span className="text-sm">TailwindCSS</span>
-            </div>
-            <div className="rounded-xl bg-zinc-900 w-fit p-1">
-              <FontAwesomeIcon className="text-yellow-600" icon={faCode} />{" "}
-              <span className="text-sm">Javascript</span>
-            </div>
-          </div>
-          <p className="text-lg mb-5 text-zinc-400">
-            Aplicación web en desarrollo que intenta imitar las herramientas de
-            escritorio para hacer música con código, priorizando la performance
-            que esto puede generar en vivo.
-          </p>
-        </ProjectBody>
-      ),
-    ],
-  },
+  // {
+  //   title: "Demás Proyectos",
+  //   projects: [
+  //     () => (
+  //       <ProjectBody
+  //         title="Live Code Music"
+  //         image="./assets/project2.webp"
+  //         code="https://github.com/hugh140/live-code-music"
+  //       >
+  //         <div className="flex my-5 gap-2">
+  //           <div className="rounded-xl bg-zinc-900 w-fit p-1">
+  //             <FontAwesomeIcon className="text-blue-600" icon={faReact} />{" "}
+  //             <span className="text-sm">React</span>
+  //           </div>
+  //           <div className="rounded-xl bg-zinc-900 w-fit p-1">
+  //             <FontAwesomeIcon className="text-cyan-600" icon={faCss3} />{" "}
+  //             <span className="text-sm">TailwindCSS</span>
+  //           </div>
+  //           <div className="rounded-xl bg-zinc-900 w-fit p-1">
+  //             <FontAwesomeIcon className="text-yellow-600" icon={faCode} />{" "}
+  //             <span className="text-sm">Javascript</span>
+  //           </div>
+  //         </div>
+  //         <p className="text-lg mb-5 text-zinc-400">
+  //           Aplicación web en desarrollo que intenta imitar las herramientas de
+  //           escritorio para hacer música con código, priorizando la performance
+  //           que esto puede generar en vivo.
+  //         </p>
+  //       </ProjectBody>
+  //     ),
+  //   ],
+  // },
 ];
 export default sections;
