@@ -41,8 +41,8 @@ function HeaderInfo() {
             </div>
           </div>
           <img
-            src="./assets/portada.webp"
-            className="w-64 rounded-full hover:scale-110 duration-500 ease-in-out"
+            src="./assets/portada2.webp"
+            className="w-64 rounded-full hover:scale-110 duration-500 ease-in-out aspect-square object-cover"
             loading="lazy"
             alt=""
           />

@@ -50,7 +50,7 @@ function AboutMeSection() {
           que le tengo a descubrir cosas y nichos nuevos.
         </p>
         <img
-          src="./assets/portada2.webp"
+          src="./assets/portada.webp"
           ref={imgRef}
           className={`object-cover aspect-square w-80 rounded-full ${isAnimatingImg()}`}
           alt=""

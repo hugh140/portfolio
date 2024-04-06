@@ -5,7 +5,7 @@ function Menu() {
   return (
     <div
       className="fixed top-1/2 right-0 text-3xl -translate-x-1/2 -translate-y-1/2 flex 
-        text-center flex-col gap-2 bg-zinc-600/50 backdrop-blur p-2 rounded-xl invisible md:visible"
+        text-center flex-col gap-2 bg-zinc-600/40 backdrop-blur p-2 rounded-xl invisible md:visible"
     >
       <a
         href="#experience"
