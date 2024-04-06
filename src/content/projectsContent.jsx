@@ -22,7 +22,7 @@ const sections = [
           image="./assets/project1.webp"
           code="https://github.com/hugh140/my-music-portal"
         >
-          <div className="flex my-5 gap-2">
+          <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
               <FontAwesomeIcon className="text-blue-600" icon={faReact} />{" "}
               <span className="text-sm">React</span>
@@ -51,7 +51,7 @@ const sections = [
           image="./assets/project3.webp"
           code="https://github.com/hugh140/products-catalogue"
         >
-          <div className="flex my-5 gap-2">
+          <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
               <FontAwesomeIcon className="text-blue-600" icon={faReact} />{" "}
               <span className="text-sm">React</span>
@@ -84,7 +84,7 @@ const sections = [
           image="./assets/project4.webp"
           code="https://github.com/hugh140/Sistema_Informes"
         >
-          <div className="flex my-5 gap-2">
+          <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
               <FontAwesomeIcon className="text-blue-600" icon={faReact} />{" "}
               <span className="text-sm">React</span>
@@ -122,7 +122,7 @@ const sections = [
             icon: faDownload,
           }}
         >
-          <div className="flex my-5 gap-2">
+          <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
               <FontAwesomeIcon className="text-violet-600" icon={faCode} />{" "}
               <span className="text-sm">C#</span>
@@ -150,7 +150,7 @@ const sections = [
             icon: faDownload,
           }}
         >
-          <div className="flex my-5 gap-2">
+          <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
               <FontAwesomeIcon className="text-violet-600" icon={faCode} />{" "}
               <span className="text-sm">C#</span>
@@ -177,7 +177,7 @@ const sections = [
             icon: faDownload,
           }}
         >
-          <div className="flex my-5 gap-2">
+          <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
               <FontAwesomeIcon className="text-violet-600" icon={faCode} />{" "}
               <span className="text-sm">C#</span>
