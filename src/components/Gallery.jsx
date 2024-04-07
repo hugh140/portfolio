@@ -1,14 +1,22 @@
 import {
   faChevronLeft,
   faChevronRight,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { createPortal } from "react-dom";
 
 function Gallery({ images = [], setOpen, onClose }) {
   const [selected, setSelected] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => setLoading(true), [selected]);
+
+  function handleImageLoad() {
+    setLoading(false);
+  }
 
   function handleSelectImg(index) {
     setSelected(index);
@@ -47,7 +55,21 @@ function Gallery({ images = [], setOpen, onClose }) {
         className="flex flex-col justify-evenly pb-40 items-center gap-5 h-full"
         id="closeModal"
       >
-        <img src={images[selected]} className="object-cover mx-auto max-h-[100%]" alt="" />
+        <div className="relative">
+          <img
+            src={images[selected]}
+            className={`object-cover mx-auto max-h-[100%] ${loading && "brightness-50"}`}
+            alt=""
+            onLoad={handleImageLoad}
+          />
+          {loading && (
+            <FontAwesomeIcon
+              className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-4xl text-white"
+              icon={faSpinner}
+              spin
+            />
+          )}
+        </div>
         <div className="flex flex-row gap-3 items-center absolute bottom-7">
           <button
             className="text-white me-5 text-5xl"
