@@ -88,7 +88,7 @@ function HeaderCanvas() {
 
   return (
     <canvas
-      className="w-full h-screen bg-zinc-900 shadow-2xl"
+      className="w-full h-screen bg-zinc-900 shadow-sky-950 shadow-2xl"
       ref={canvasRef}
     ></canvas>
   );

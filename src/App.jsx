@@ -11,7 +11,7 @@ function App() {
       <HeaderInfo />
       <Menu />
 
-      <div className="bg-gradient-to-b from-zinc-950 via-violet-950/90 via-90% to-blue-950/90">
+      <div className="bg-gradient-to-b from-zinc-950 via-violet-950/50 via-90% to-blue-950/50">
         <ExperienceInfo />
         <ProjectSection />
         <AboutMeSection />

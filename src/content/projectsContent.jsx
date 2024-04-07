@@ -21,6 +21,12 @@ const sections = [
           title="Mi Portal de Música"
           image="./assets/project1.webp"
           code="https://github.com/hugh140/my-music-portal"
+          gallery={[
+            "./assets/project1.webp",
+            "./assets/project12.webp",
+            "./assets/project13.webp",
+            "./assets/project14.webp",
+          ]}
         >
           <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
@@ -50,6 +56,11 @@ const sections = [
           title="Cellphora"
           image="./assets/project3.webp"
           code="https://github.com/hugh140/products-catalogue"
+          gallery={[
+            "./assets/project3.webp",
+            "./assets/project32.webp",
+            "./assets/project33.webp",
+          ]}
         >
           <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
@@ -83,6 +94,12 @@ const sections = [
           title="SAIT"
           image="./assets/project4.webp"
           code="https://github.com/hugh140/Sistema_Informes"
+          gallery={[
+            "./assets/project4.webp",
+            "./assets/project42.webp",
+            "./assets/project43.webp",
+            "./assets/project44.webp",
+          ]}
         >
           <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
@@ -114,13 +131,14 @@ const sections = [
     projects: [
       () => (
         <ProjectBody
-          title="Live Code Music"
+          title="Music Sequencer"
           image="./assets/project5.webp"
           customButton={{
             title: "Descargar",
             url: "https://hug-h.itch.io/music-sequencer",
             icon: faDownload,
           }}
+          gallery={["./assets/project5.webp"]}
         >
           <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
@@ -149,6 +167,7 @@ const sections = [
             url: "https://hug-h.itch.io/vs-game",
             icon: faDownload,
           }}
+          gallery={["./assets/project7.webp", "./assets/project72.webp"]}
         >
           <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
@@ -176,6 +195,7 @@ const sections = [
             url: "https://hug-h.itch.io/pong-copia",
             icon: faDownload,
           }}
+          gallery={["./assets/project6.webp", "./assets/project62.webp"]}
         >
           <div className="flex flex-wrap my-5 gap-2">
             <div className="rounded-xl bg-zinc-900 w-fit p-1">
