@@ -55,16 +55,16 @@ function Gallery({ images = [], setOpen, onClose }) {
         className="flex flex-col justify-evenly pb-40 items-center gap-5 h-full"
         id="closeModal"
       >
-        <div className="relative">
+        <div className="relative md:max-h-[90%]">
           <img
             src={images[selected]}
-            className={`object-cover mx-auto max-h-[100%] ${loading && "brightness-50"}`}
+            className={`object-cover mx-auto h-full ${loading && "brightness-50"}`}
             alt=""
             onLoad={handleImageLoad}
           />
           {loading && (
             <FontAwesomeIcon
-              className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-4xl text-white"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl text-white"
               icon={faSpinner}
               spin
             />
