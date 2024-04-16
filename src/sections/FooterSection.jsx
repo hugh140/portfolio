@@ -49,6 +49,15 @@ function FooterSection() {
           <FontAwesomeIcon icon={faFilePdf} className="me-2" /> Currículum
         </a>
       </div>
+      <div>
+        <a
+          className="underline font-bold hover:text-blue-500"
+          href="https://github.com/hugh140/portfolio"
+        >
+          Aquí
+        </a>{" "}
+        el repositorio del portafolio.
+      </div>
     </footer>
   );
 }
