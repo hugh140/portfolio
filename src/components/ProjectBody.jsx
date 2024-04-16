@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
 import { useRef, useState, useContext, useEffect } from "react";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { SelectionContext } from "../sections/ProjectSection";
 import Gallery from "./Gallery";
 
@@ -34,7 +34,7 @@ function ProjectBody({ title, image, children, code, customButton, gallery }) {
         onClose={handleCloseGallery}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="relative">
+        <div className="relative w-fit">
           <img
             src={image}
             ref={imageRef}
@@ -45,6 +45,9 @@ function ProjectBody({ title, image, children, code, customButton, gallery }) {
             alt=""
             onClick={handleOpenGallery}
           />
+          <div className="absolute top-1 left-1 bg-zinc-700/50 p-3 rounded-full">
+            <FontAwesomeIcon icon={faEye} />
+          </div>
           {loading && (
             <FontAwesomeIcon
               className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-4xl"
